@@ -75,14 +75,17 @@ test('#isNull, #isNotNull', function () {
       assert.isBelow(2 / 3, 1);
     });
     // #10
-test('#approximately', function () {
-  // Primera Afirmación (Aproximación de PI)
-  assert.approximately(Math.PI, 3.14159, 0.000003, 'should be approximately equal'); 
+    test('#approximately', function () {
+      // Delta mínima para que ambas pasen (el valor debe ser menor que 1)
+      const MIN_DELTA = 0.000001; 
 
-  // Segunda Afirmación (Comparación con 0.0001 de diferencia)
-  assert.approximately(1.0001, 1.0002, 0.0001, 'should be approximately equal'); 
-});
-    });
+      // Primera aserción
+      assert.approximately(weirdNumbers(0.5), 1, MIN_DELTA);
+      
+      // Segunda aserción
+      assert.approximately(weirdNumbers(0.2), 1, MIN_DELTA);
+    });
+  });
 
   // -----------------------------------------------------------------------------
 
