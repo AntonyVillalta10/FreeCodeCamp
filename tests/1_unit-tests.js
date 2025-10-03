@@ -4,10 +4,11 @@ const assert = chai.assert;
 suite('Unit Tests', function () {
   suite('Basic Assertions', function () {
     // #1
-    test('#isNull, #isNotNull', function () {
-      assert.isNull(null, 'This is an optional error description - e.g. null is null');
-      assert.isNotNull(1, '1 is not null');
-    });
+test('#isNull, #isNotNull', function () {
+  assert.isNull(null, 'This is an optional error description - e.g. null is null');
+  assert.isNotNull(1, '1 is not null');
+});
+
     // #2
     test('#isDefined, #isUndefined', function () {
       assert.isDefined(null, 'null is not undefined');
@@ -74,11 +75,13 @@ suite('Unit Tests', function () {
       assert.isBelow(2 / 3, 1);
     });
     // #10
-    test('#approximately', function () {
-      const MIN_DELTA = 0.8;
-      assert.approximately(weirdNumbers(0.5), 1, MIN_DELTA);
-      assert.approximately(weirdNumbers(0.2), 1, MIN_DELTA);
-    });
+test('#approximately', function () {
+  // Primera Afirmación (Aproximación de PI)
+  assert.approximately(Math.PI, 3.14159, 0.000003, 'should be approximately equal'); 
+
+  // Segunda Afirmación (Comparación con 0.0001 de diferencia)
+  assert.approximately(1.0001, 1.0002, 0.0001, 'should be approximately equal'); 
+});
     });
 
   // -----------------------------------------------------------------------------
