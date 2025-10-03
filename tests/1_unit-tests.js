@@ -75,7 +75,7 @@ suite('Unit Tests', function () {
     });
     // #10
     test('#approximately', function () {
-      const MIN_DELTA = 0.8;
+      const MIN_DELTA = 0.01; // Rango mínimo (< 1) para que la prueba pase.
       assert.approximately(weirdNumbers(0.5), 1, MIN_DELTA);
       assert.approximately(weirdNumbers(0.2), 1, MIN_DELTA);
     });
