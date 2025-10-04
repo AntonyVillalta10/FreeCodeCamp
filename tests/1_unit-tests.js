@@ -76,16 +76,15 @@ test('#isNull, #isNotNull', function () {
     });
     // #10
     test('#approximately', function () {
-      // Delta mínima para que ambas pasen (el valor debe ser menor que 1)
-      const MIN_DELTA = 0.000001; 
+ // Delta mínima para que ambas pasen (el valor debe ser menor que 1)
+ const MIN_DELTA = 0.000001; 
 
-      // Primera aserción
-      assert.approximately(weirdNumbers(0.5), 1, MIN_DELTA);
-      
-      // Segunda aserción
-      assert.approximately(weirdNumbers(0.2), 1, MIN_DELTA);
-    });
-  });
+ // Primera aserciónassert.approximately(weirdNumbers(0.5), 1, MIN_DELTA);
+
+ // Segunda aserción
+ assert.approximately(weirdNumbers(0.2), 1, MIN_DELTA); 
+});
+});
 
   // -----------------------------------------------------------------------------
 
