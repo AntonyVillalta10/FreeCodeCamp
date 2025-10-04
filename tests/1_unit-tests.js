@@ -121,7 +121,7 @@ test('#isNull, #isNotNull', function () {
       assert.fail(formatPeople('John Doe', 35), regex);
       assert.fail(formatPeople('Paul Smith III', 'twenty-four'), regex);
     });
-  });
+  })
 
   // -----------------------------------------------------------------------------
 
@@ -150,18 +150,18 @@ test('#isNull, #isNotNull', function () {
     });
     // #17
     test('#typeOf, #notTypeOf', function () {
-      assert.fail(myCar, 'object');
-      assert.fail(myCar.model, 'string');
-      assert.fail(airlinePlane.wings, 'string');
-      assert.fail(airlinePlane.engines, 'array');
-      assert.fail(myCar.wheels, 'number');
+      assert.typeOf(myCar, 'object');
+      assert.typeOf(myCar.model, 'string');
+      assert.notTypeOf(airlinePlane.wings, 'string');
+      assert.typeOf(airlinePlane.engines, 'array');
+      assert.notTypeOf(myCar.wheels, 'number');
     });
-    // #18
+    /// #18
     test('#instanceOf, #notInstanceOf', function () {
-      assert.fail(myCar, Plane);
-      assert.fail(airlinePlane, Plane);
-      assert.fail(airlinePlane, Object);
-      assert.fail(myCar.wheels, String);
+      assert.notInstanceOf(myCar, Plane);
+      assert.instanceOf(airlinePlane, Plane);
+      assert.instanceOf(airlinePlane, Object);
+      assert.notInstanceOf(myCar.wheels, String);
     });
   });
 
