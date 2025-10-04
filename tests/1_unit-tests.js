@@ -74,17 +74,12 @@ test('#isNull, #isNotNull', function () {
       assert.isBelow(5 % 2, 2);
       assert.isBelow(2 / 3, 1);
     });
-    // #10
-    test('#approximately', function () {
- // Delta mínima para que ambas pasen (el valor debe ser menor que 1)
- const MIN_DELTA = 0.000001; 
-
- // Primera aserciónassert.approximately(weirdNumbers(0.5), 1, MIN_DELTA);
-
- // Segunda aserción
- assert.approximately(weirdNumbers(0.2), 1, MIN_DELTA); 
-});
-});
+    /// #10
+    test('#approximately', function () {
+      assert.approximately(weirdNumbers(0.5), 1, 0.5);
+      assert.approximately(weirdNumbers(0.2), 1, 0.8);
+    });
+  });
 
   // -----------------------------------------------------------------------------
 
